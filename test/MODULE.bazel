@@ -1,0 +1,18 @@
+module(
+    name = "bzlmod-test",
+    version = "0.0.0",
+)
+
+# Starlark dependencies
+bazel_dep(name = "rules_cc", version = "0.0.1")
+bazel_dep(name = "platforms", version = "0.0.4")
+
+# Use the local module
+local_path_override(module_name = "bzlmod", path = "..")
+bazel_dep(name = "bzlmod", version = "0.0.0")
+test = use_extension("@bzlmod//:extensions.bzl", "test")
+test.test(version = "0.9.0")
+use_repo(
+  test,
+  "test-0.9.0",
+)

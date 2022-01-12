@@ -1,0 +1,6 @@
+# Bazel executables and output folder symlinks
+/bazel-*
+/bazelisk-*
+
+# User-specific .bazelrc
+user.bazelrc

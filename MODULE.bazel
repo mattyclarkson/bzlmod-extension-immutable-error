@@ -1,0 +1,8 @@
+module(
+    name = "bzlmod",
+    version = "0.0.0-alpha.rc0",
+)
+
+# Starlark dependencies
+bazel_dep(name = "rules_cc", version = "0.0.1")
+bazel_dep(name = "platforms", version = "0.0.4")
